@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+		<div class="col-2 top_nav_right text-center mt-sm-0 mt-2">
+							<div class="wthreecartaits wthreecartaits2 cart cart box_1">
+								<form action="checkout.php" method="post" class="last">
+									<input type="hidden" name="cmd" value="_cart">
+									<input type="hidden" name="display" value="1">
+									<button class="btn w3view-cart" type="submit" name="submit" value="">
+										<i class="fas fa-cart-arrow-down"></i><span id="cart_items">0</span>
+									</button>
+								</form>
+							</div>
+						</div>
+
+
+			
+								<div class="col-md-4 product-men mt-5">
+									<div class="men-pro-item simpleCart_shelfItem">
+										<div class="men-thumb-item text-center">
+											<img src="images/m1.png" alt="">
+											<div class="men-cart-pro">
+												<div class="inner-men-cart-pro">
+													<a href="single.php" class="link-product-add-cart">Quick View</a>
+												</div>
+											</div>
+											<span class="product-new-top">New</span>
+
+										</div>
+										<div class="item-info-product text-center border-top mt-4">
+											<h4 class="pt-1">
+												<a href="single.php">Ugandan Orange</a>
+											</h4>
+											<div class="info-product-price my-2">
+												<span class="item_price">Kshs.28.00</span>
+												<del>Kshs.30.00</del>
+											</div>
+											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+												<form>
+													<fieldset>
+														<input type="hidden" name="cmd" value="_cart" />
+														<input type="hidden" name="add" id="pid" value="1" />
+														<input type="hidden" name="business" value=" " />
+														<input type="hidden" name="item_name" id="name" value="Ugandan Orange" />
+														<input type="hidden" name="amount" id="price" value="280.00" />
+														<input type="hidden" name="discount_amount" value="1.00" />
+														<input type="hidden" name="currency_code" value="KSHS." />
+														<input type="hidden" name="return" value=" " />
+														<input type="hidden" name="cancel_return" value=" " />
+														<input type="button" name="submit" value="Add to cart" class="button btn submit" />
+													</fieldset>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+
+<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+<script type="text/javascript">
+	 var quantity=0
+	$(document).ready(function(){
+
+		var submit=document.querySelector(".submit");
+
+		$(".submit").on("click",function(){
+
+			var pid=$("#pid").val();
+			var name=$("#name").val();
+			var price=$("#price").val();
+			 quantity+=1;
+
+            
+		var	formData = new FormData(this.parentElement.parentElement);
+			//var formElements = document.forms['myform'].elements['inputTypeName'].value;
+         
+         $("#cart_items").text(quantity);
+			console.log(quantity);
+
+			//send to the database
+
+		})
+	})
+</script>
+</body>
+</html>
